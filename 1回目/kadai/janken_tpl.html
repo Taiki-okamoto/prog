@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<script src="js/jquery-2.1.3.min.js"></script>
+<link rel="stylesheet" href="css/sample.css">
+<title>じゃんけん</title>
+</head>
+<body>
+
+
+  <h1>じゃんけん</h1>
+
+
+<main>
+  <ul>
+    <li id="gu_btn"><img src="グー.jpeg"></li>
+    <li id="cho_btn"><img src="チョキ.jpeg"></li>
+    <li id="par_btn"><img src="パー.png"></li>
+  </ul>
+  <div>コンピュータの出した手は？「<span id="pc_hands"></span>」</div>
+
+
+
+</main>
+
+<footer>
+  <li id="result_btn"> 結果</li>  
+  <div id="judgment"></div>
+  <div id="judgment_img"></div>
+
+</footer>
+
+
+
+
+
+<script>
+//じゃんけん用のSCRIPTを書いてください
+
+////////グーを出したとき//////////
+
+$("#gu_btn").on("click", function(){
+
+  const r = Math.ceil(Math.random()*3);
+
+    let view ="";
+    let view1="";
+    let view2="";
+
+    if(r==1){
+      //グーと表示
+      view='<img src="グー.jpeg">';
+      view1="引き分け";
+      view2='<img src="drow.jpg">';
+
+
+
+    }else if(r==2){
+      //チョキと表示
+      view='<img src="チョキ.jpeg">';
+      view1="勝ち";
+      view2='<img src="win.jpg">';
+
+    }else{
+    //パート表示
+    view='<img src="パー.png">'
+    view1="負け";
+    view2='<img src="lose.jpeg">';
+
+    }
+
+  $("#pc_hands").html(view);
+  $("#judgment").html(view1);
+  $("#judgment_img").html(view2);
+
+});
+
+////////チョキを出したとき//////////
+
+
+$("#cho_btn").on("click", function(){
+
+const r = Math.ceil(Math.random()*3);
+
+  let view ="";
+  let view1="";
+  let view2="";
+
+
+  if(r==1){
+    //グーと表示
+    view='<img src="グー.jpeg">';
+    view1="負け";
+    view2='<img src="lose.jpeg">';
+
+
+  }else if(r==2){
+    //チョキと表示
+    view='<img src="チョキ.jpeg">';
+    view1="引き分け";
+    view2='<img src="drow.jpg">';
+
+  }else{
+  //パート表示
+  view='<img src="パー.png">'
+  view1="勝ち";
+  view2='<img src="win.jpg">';
+
+  }
+
+$("#pc_hands").html(view);
+$("#judgment").html(view1);
+$("#judgment_img").html(view2);
+
+
+});
+
+
+////////パーを出したとき//////////
+
+
+$("#par_btn").on("click", function(){
+
+const r = Math.ceil(Math.random()*3);
+
+  let view ="";
+  let view1="";
+  let view2="";
+
+
+  if(r==1){
+    //グーと表示
+    view='<img src="グー.jpeg">';
+    view1="勝ち";
+    view2='<img src="win.jpg">';
+
+
+  }else if(r==2){
+    //チョキと表示
+    view='<img src="チョキ.jpeg">';
+    view1="負け";
+    view2='<img src="lose.jpeg">';
+
+  }else{
+  //パート表示
+  view='<img src="パー.png">'
+  view1="引き分け";
+  view2='<img src="drow.jpg">';
+
+  }
+
+$("#pc_hands").html(view);
+$("#judgment").html(view1);
+$("#judgment_img").html(view2);
+
+
+});
+    
+    
+    
+    
+    
+    
+
+</script>
+</body>
+</html>
