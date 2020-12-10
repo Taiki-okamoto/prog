@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/jquery-2.1.3.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+    <title>Football Log</title>
+
+<!-- <link rel="stylesheet" href="reset.css"> -->
+<link rel="stylesheet" href="sample0.css">
+<link rel="stylesheet" href="">
+
+</head>
+<body>
+
+    <!--     header      -->
+
+        <header>
+            <div>
+                <h1>Football Log</h1>
+                <div>〜〜試合をリアルタイムで記録しよう〜〜</div>
+            </div>
+        </header>
+
+    <!--     header      -->
+
+
+    <!--     main        -->
+
+<main>
+
+        <!-- inputフォーム -->
+
+            <div class="input_form">
+                <!-- team入力 -->
+
+                <h3>チーム</h3>
+
+
+
+                <div class="embrem">
+                    <ul>
+                        <li class="imgs" data-img="0" id="real"><img src="レアル・マドリード.jpg" width="200" height="112.5px" ></li>
+                        <li class="imgs" data-img="1" id="bar"><img src="バルセロナ.jpg" width="200"></li>
+                        <li class="imgs" data-img="2" id="int"><img src="インテル.jpg" width="200"></li>
+                        <li class="imgs" data-img="3" id="mir"><img src="ミラン.jpg" width="200"></li>
+                        <li class="imgs" data-img="4" id="man"><img src="マンU.png" width="200" height="112.5px"></li>
+                    </ul>
+                </div>
+
+                
+        
+
+                <div class="team">
+                    <input type="text" id="my_team" class="input1">
+
+                    <ul class="ul_team_number">
+                        <!-- <li><p class="p">自分のチーム</p></li> -->
+
+                        <li class="my_team_number" ><select name="" id="my_team_number" class="select1">
+                            <option value="0">ゴール</option>
+                            <option value="1">イエローカード</option>
+                            <option value="2">レッドカード</option>
+                            <option value="3">選手交代</option>
+                            <option value="3"></option>
+                            <option value="4">前半終了</option>
+                            <option value="5">後半開始</option>
+                            <option value="5">後半終了</option>
+                            <option value="5">延長前半開始</option>
+                            <option value="5">延長前半終了</option>
+                            <option value="5">延長後半開始</option>
+                            <option value="5">延長後半終了</option>
+
+
+                            <option value="5">タイムアップ</option>
+
+                        </select></li>
+
+                </div>
+                <!-- // team入力 -->
+
+                <!-- 試合結果入力 -->
+                <!-- <div class="result">
+                </div> -->
+
+
+                <!--// 試合結果入力 -->
+
+
+                <!-- scorer入力 -->
+
+                <div class="scorer">
+                    <h3>得点者</h3>
+                    <ul>
+                            <li><div class="positon">ポジション</div></li>
+                            <li><select name="position" id="position" class="select">
+                                <option value="FW">FW</option>
+                                <option value="MF">MF</option>
+                                <option value="DF">DF</option>
+                                <option value="GK">GK</option>
+                            </select></li>
+                        
+                            <!-- <li><div class="number">背番号</div></li> -->
+                            
+                            <!-- <li><select name="number" id="player_number" class="select"></select></li> -->
+                            <li><div class="player_name">選手名</div></li>
+                            <li><input type="text" id="uname" class="input"></li>
+                            <li><div class="player_name">得点数</div></li>
+                            <li><select name="" id="score_number" class="select">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option></select>
+                            </li>
+                    </ul>
+                </div>
+
+                <!--// scorer入力 -->
+
+            </div>
+
+            <div class="scorer">
+                <h3>アシスト者</h3>
+                <ul>
+                        <li><div class="positon">ポジション</div></li>
+                        <li><select name="position" id="position_a" class="select">
+                            <option value="FW">FW</option>
+                            <option value="MF">MF</option>
+                            <option value="DF">DF</option>
+                            <option value="GK">GK</option>
+                        </select></li>
+                    
+                        <!-- <li><div class="number">背番号</div></li> -->
+                        
+                        <!-- <li><select name="number" id="player_number_a" class="select"></select></li> -->
+                        <li><div class="player_name">選手名</div></li>
+                        <li><input type="text" id="uaname" class="input"></li>
+                        <li><div class="player_name">アシスト数</div></li>
+                        <li><select name="" id="score_number_a" class="select">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option></select>
+                        </li>
+                </ul>
+            </div>
+
+            <!--// scorer入力 -->
+
+        </div>
+
+
+
+        <div>
+            <h3>詳細</h3>
+            <div class="textarea">
+                <textarea id="text" class="realtextarea" cols="30" rows="10"></textarea>
+                <button id="send" class="button6">Submit</button>
+            </div>
+            <div id="output" style="height: 300px; overflow: auto; border: 3px solid green;"></div>
+        </div>
+
+        <!-- listフォーム -->
+
+
+
+        <!-- // listフォーム -->
+
+        <!-- <table class="table">
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>アーセナル</td>
+                <td>メスト・エジル</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>マンチェスターC</td>
+                <td>ケヴィン・デブライネ</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>マンチェスターU</td>
+                <td>ブルーノ・フェルナンデス</td>
+            </tr>
+        </table> -->
+
+
+</main>
+
+    <!--    //  main        -->
+
+<!-- <footer>
+</footer> -->
+
+<!-- jquery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<!-- jquery -->
+
+
+<!-- 以下, firebase -->
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+
+    <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {  //configは設定みたいなもの
+        apiKey: "AIzaSyBc1tWCLm_s5uR55_zFzI5Fj91qniVL3dU",//自分のapikeyを割り振られた.独自番号
+        authDomain: "task04-514df.firebaseapp.com",//自分の割り振られたドメイン
+        projectId: "task04-514df",
+        storageBucket: "task04-514df.appspot.com",
+        messagingSenderId: "79222815001",
+        appId: "1:79222815001:web:e68ec352092e9c1828ad88"//ここら辺まとめてあなたであることをわかるようにしている
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);//オブジェクト変数を渡して、登録してあるかどうか確認している。
+
+    const ref = firebase.database().ref();//ref("/useritem/")のなかに、ディレクトリ構造(フォルダ名)をかくと、そのデータ構造で保存できる。
+    //firebaseに接続している。
+    </script>
+
+
+    <script>
+
+    let d = 0;
+    const img  = ["レアル・マドリード.jpg","バルセロナ.jpg","インテル.jpg","ミラン.jpg","マンU.png"];
+
+    $(".imgs").on("click",function(){
+        d = $(this).attr("data-img");//classのimgは5つあるが、その中でクリックしたものの属性をとってきている。
+        //attrは属性値をとってくるときに用いる。 attributeの略。
+        console.log(d);
+
+        if(d==0){
+            // alert("レアル・マドリード");
+            $("#my_team").val("レアル・マドリード");
+        }else if(d==1){
+            $("#my_team").val("バルセロナ");
+        }else if(d==2){
+            $("#my_team").val("インテル");
+        }else if(d==3){
+            $("#my_team").val("ACミラン");
+        }else if(d==4){
+            $("#my_team").val("マンチェスターU");
+        }
+    });
+
+
+
+//送信ボタンクリックイベント
+
+    $("#send").on("click",function(){
+        const uname = $("#uname").val();//入力した値を撮ってきて、変数に格納
+        const uaname = $("#uaname").val();
+        const text  = $("#text").val();//入力した値を持ってきて、変数に格納
+        const score = "得点者";
+        const assist = "アシスト";
+        const position = $("#position").val();
+        const position_a = $("#position_a").val();
+        let S = $("#my_team_number").val();
+
+
+        let date = new Date();
+        function sampleDate(date, format){
+                format = format.replace(/YYYY/, date.getFullYear());
+                format = format.replace(/MM/, date.getMonth()+1);
+                format = format.replace(/DD/, date.getDate());
+                format = format.replace(/HH/, date.getHours());
+                format = format.replace(/II/, date.getMinutes());
+                format = format.replace(/SS/, date.getSeconds());
+                return format;
+        }
+
+            let postday = sampleDate(date,'YYYY/MM/DD HH:II:SS');
+            console.log(postday);
+
+
+                
+                const msg = {
+                    uname:score+position+uname,//プロパティ名(送信名):変数
+                    uaname:assist+position_a+uaname,
+                    text:text,   //プロパティ名(送信名):変数
+                    icon:d,
+                    day:postday
+                };
+                //データを送信する//サーバーにpush
+                ref.push(msg);
+
+        
+        //オブジェクト変数を作る
+        
+    });
+
+
+
+    //Enterで送信イベント
+
+$("#text").on("keydown", function(a){
+    console.log(a.keyCode);
+
+    if(a.keyCode==13){
+
+        const uname =$("#uname").val();
+        const uaname = $("#uaname").val();
+        const text = $("#text").val();
+        const score = "得点者";
+        const assist = "アシスト";
+        const position = ("#position").val();
+        const position_a = ("#position_a").val();
+        let S = $("#my_team_number").val();
+
+
+        let date = new Date();
+        function sampleDate(date, format){
+            format = format.replace(/YYYY/, date.getFullYear());
+            format = format.replace(/MM/, date.getMonth()+1);
+            format = format.replace(/DD/, date.getDate());
+            fotmat = format.replace(/HH/, date.getHours());
+            format = format.replace(/II/, date.getMinutes());
+            format = format.replace(/SS/, date.getSeconds());
+
+            return format;
+        }
+
+        let postday = sampleDate(date,"YYYY/MM/DD HH:II:SS");
+
+
+        if(S=="ゴール"){
+                
+                const msg = {
+                    uname:score+position+uname,//プロパティ名(送信名):変数
+                    uaname:assist+position_a+uaname,
+                    text:text,   //プロパティ名(送信名):変数
+                    icon:d,
+                    day:postday
+                };
+                //データを送信する//サーバーにpush
+                ref.push(msg);
+
+            }else if(S=="イエローカード"){
+                const msg = {
+                    uname:"イエローカード"+position+uname,//プロパティ名(送信名):変数
+                    text:text,   //プロパティ名(送信名):変数
+                    icon:d,
+                    day:postday
+                };
+                //データを送信する//サーバーにpush
+                ref.push(msg);
+            }else if(S=="レッドカード"){
+                const msg = {
+                    uname:"イエローカード"+position+uname,//プロパティ名(送信名):変数
+                    text:text,   //プロパティ名(送信名):変数
+                    icon:d,
+                    day:postday
+                };
+                //データを送信する//サーバーにpush
+                ref.push(msg);
+            }else{
+                const msg= {
+                    uaname:S,
+                    day:postday
+                }
+                ref.push(msg);
+            }
+}});
+
+
+//databaseからの受信イベント
+let S = $("#my_team_number").val();
+
+ref.on("child_added",function(data){
+    const vip = data.val();//dataオブジェクトのなかのDataを取得している(objectの中身をとってきている)
+    const kip = data.key; //KEYを取得(削除するときに必要らしい)//removeでkeyごと削除できる
+
+
+    const html = '<dt><img src="'+img[vip.icon]+'" width="60"></dt><dt>'+vip.uname+'</dt><dt>'+vip.uaname+'</dt><dt>'+vip.text+'</dt><dt>'+vip.day+'</dt>';
+
+    // const html = '<dt><img src="'+img[vip.icon]+'" width="60"></dt><dt>'+vip.uname+'</dt><dt>'+vip.uaname+'</dt><dt>'+vip.text+'</dt><dt>'+vip.day+'</dt>';
+    $("#output").append(html);//append(html)は１番下にデータを挿入。
+
+    const bottom = document.getElementById("output");//スクロール下部へ移動
+    bottom.scrollTop = bottom.scrollHeight;
+
+});
+
+
+
+
+
+
+
+
+
+
+</script>
+    
+</body>
+</html>

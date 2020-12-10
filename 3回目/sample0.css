@@ -1,0 +1,216 @@
+body{
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    font-size: 32px;
+    width:100%;
+
+background-image:url(soccer.jpeg);
+background-position-x: center;
+background-position-y: center;
+background-size: cover;
+background-attachment: initial;
+background-origin: initial;
+background-clip: initial;
+background-color:initial;
+box-sizing: border-box;
+}
+
+header{
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+}
+
+h1{
+    margin: 0 0;
+}
+
+main{
+    width: 100%;
+    display: block;
+    border-bottom: 1px solid #ccc;
+    position: relative;
+
+}
+footer{
+    padding: 0;
+    display: inline;
+    background-color: #fff;
+    border-bottom:1px solid #ccc;
+    text-align: center;
+}
+
+
+ul{
+    border: 1px solid #ccc;
+    table-layout: fixed;
+
+        padding: 0;
+        border-top: 1px solid #000000;
+        display:table;  /* 定義 */
+        table-layout: fixed;
+        width:96%;
+        font-size: 80%;
+        margin: 0 3%;
+        text-align: center;
+}
+
+.embrem ul li{
+    display: inline-block;
+    padding: 0 15px;
+}
+
+
+
+h2{
+    text-align: center;
+    margin: 10px 0;
+}
+
+h3{
+    text-align: center;
+    margin: 10px 0;
+}
+
+h4{
+    text-align: center;
+    margin: 10px 0;  
+}
+
+ul{
+    list-style-type: none;
+    text-align: center;
+}
+
+.team ul li{
+    display: inline-block;
+    padding: 0 60px;
+
+}
+
+.result ul li{
+    display: inline-block;
+    padding: 0 15px;
+}
+
+
+.scorer ul li{
+    display: inline-block;
+    padding: 0 15px;
+
+}
+
+.operation ul li{
+    display: inline-block;
+    padding: 20px 60px;
+}
+
+.button6{
+    font-size: 20px;
+    font-weight: bold;
+    padding:10px 30px;
+    background-color: #248;
+    color: #fff;
+    border-style: none;
+    box-shadow: 2px 2px 3px 1px #666;
+    -moz-box-shadow:2px 2px 3px 1px #666;
+    -webkit-box-shadow: 2px 2px 3px 1px #666;
+    text-shadow: 1px 1px 2px #000;
+}
+
+.button6:hover{
+    background-color: #24d;
+    color:#fff;
+}
+
+.imgs{
+    border-style: none;
+    box-shadow: 2px 2px 3px 1px #666;
+    -moz-box-shadow:2px 2px 3px 1px #666;
+    -webkit-box-shadow: 2px 2px 3px 1px #666;
+    text-shadow: 1px 1px 2px #000;
+}
+
+.imgs:hover{
+    background-color: #24d;
+    color:#fff;
+}
+
+
+.input{
+    width: 300px;
+    height: 40px;
+    font-size: 30px;
+}
+
+.team{
+    text-align: center;
+}
+
+.input1{
+    width: 300px;
+    height: 40px;
+    font-size: 30px;
+    text-align: center;
+
+}
+
+.select{
+    width:100px;
+    height: 50px;
+    font-size: 25px;
+}
+
+.select1{
+    width:200px;
+    height: 50px;
+    font-size: 25px;
+}
+
+.ul_team_number{
+    padding: 10px 0;
+}
+
+.table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table tr:hover{
+    background: #eee;
+}
+
+.table td{
+    border: 1px solid #eee;
+}
+
+.memo{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.textarea{
+    text-align: center;
+    
+}
+
+.realtextarea{
+    font-size: 20px;
+    height: 100px;
+    width: 300px;
+    text-align: center;
+}
+
+
+
+.tr:hover{
+    background: #eee;
+}
+
+
+
+
+.tr td{
+    border: 1px solid #eee;
+}
+
