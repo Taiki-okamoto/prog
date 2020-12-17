@@ -1,0 +1,189 @@
+.drowarea{
+    background-image:url(サッカーフィールド.webp);
+    background-position-x: 0px;
+    background-position-y: center;
+
+    background-size: 1350px 660px ;
+    background-attachment: initial;
+    background-origin: initial;
+    background-clip: initial;
+    box-sizing: border-box;
+
+}
+
+.ui-title{
+    background-color: #eceabe;
+    color:#333333;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.create{
+    text-align: center;
+}
+
+
+.drag-and-drop {
+    cursor: move;
+    position: absolute;
+    z-index: 1000;
+}
+
+.drag {
+    z-index: 1001;
+}
+
+.drag-and-drop-0{
+    width:38px;
+    height:38px;
+    background:gold;
+    border-radius:35px;
+    text-align: center;
+    
+}
+
+.drag-and-drop-1{
+    width:38px;
+    height:38px;
+    background:rgb(175, 50, 60);
+    border-radius:38px;
+    text-align: center;
+    color: #dddddd;
+}
+
+#y1{
+    position; top: 440px; left :75px;
+}
+
+#y2{
+    position; top: 180px; left :230px;
+}
+
+#y3{
+    position; top: 335px; left :180px;
+}
+
+#y4{
+    position; top: 540px; left :180px;
+}
+
+#y5{
+    position; top: 690px; left :230px;
+}
+
+#y6{
+    position; top: 180px; left :455px;
+}
+
+#y7{
+    position; top: 335px; left :365px;
+}
+
+#y8{
+    position; top: 540px; left :365px;
+}
+
+#y9{
+    position; top: 690px; left :455px;
+}
+
+#y10{
+    position; top: 335px; left :570px;
+}
+
+#y11{
+    position; top: 540px; left :570px;
+}
+
+#y12{
+    position; top: 790px; left :370px;
+}
+
+#y13{
+    position; top: 790px; left :320px;
+}
+#y14{
+    position; top: 790px; left :270px;
+}
+
+#y15{
+    position; top: 790px; left :220px;
+}
+
+#y16{
+    position; top: 790px; left :170px;
+}
+
+#y17{
+    position; top: 790px; left :120px;
+}
+
+
+
+#r1{
+    position; top: 440px; left :1255px;
+}
+
+#r2{
+    position; top: 180px; left :1100px;
+}
+
+#r3{
+    position; top: 335px; left :1140px;
+}
+
+#r4{
+    position; top: 540px; left :1140px;
+}
+
+#r5{
+    position; top: 690px; left :1100px;
+}
+
+#r6{
+    position; top: 180px; left :875px;
+}
+
+#r7{
+    position; top: 335px; left :955px;
+}
+
+#r8{
+    position; top: 540px; left :955px;
+}
+
+#r9{
+    position; top: 690px; left :875px;
+}
+
+#r10{
+    position; top: 335px; left :760px;
+}
+
+#r11{
+    position; top: 540px; left :760px;
+}
+
+#r12{
+    position; top: 790px; left :950px;
+}
+
+#r13{
+    position; top: 790px; left :1000px;
+}
+#r14{
+    position; top: 790px; left :1050px;
+}
+
+#r15{
+    position; top: 790px; left :1100px;
+}
+
+#r16{
+    position; top: 790px; left :1150px;
+}
+
+#r17{
+    position; top: 790px; left :1200px;
+}
+
