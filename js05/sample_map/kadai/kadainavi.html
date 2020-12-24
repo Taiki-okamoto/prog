@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>ぐるなびAPI</title>
+        <style>html,body{height:100%;}body{padding:0;margin:0;}h1{padding:0;margin:0;font-size:50%;}</style>
+
+    </head>
+    <body>
+
+        <!-- MAP[START] -->
+        <h1>Map:Geolocation</h1>
+        <div id="geocode">geocode:data</div>
+        <div id="geocode1">ReverseGeocode:data</div>
+        <div id="myMap" style='width:60%;height:70%;float:left;'></div>
+        <!-- MAP[END] -->
+
+
+
+        <div>
+            アクセスキーを入力<input id="key" value="5a30c9b35487c59191fdfd056443cb2d" type="text" size="45">
+            <input type="button" id="btn" value="送信"><br>
+            <!-- 緯度lat: <input type="text" id="lat" value="35.669118"> -->
+            緯度lat: <input type="text" id="lat" value="35.669118">
+            経度lon: <input type="text" id="lon" value="139.703355">
+        </div>
+        <table id="table">
+            <tr>
+                <th>店舗名</th>
+                <th>営業時間</th>
+            </tr>
+        </table>
+
+
+        <script src="../js/BmapQuery.js"></script>
+        <script src='https://www.bing.com/api/maps/mapcontrol?callback=GetMap&key=AnRhlvTv9kXBtmpCirydoLqY4nMWMwOaDbuLbT1OucvJnqZLGEre8MF1j4UAlf-4' async defer></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        
+        <script>
+            //****************************************************************************************
+            // BingMaps&BmapQuery
+            //****************************************************************************************
+            //Init
+            function GetMap(){
+                //------------------------------------------------------------------------
+                //1. Instance
+                //------------------------------------------------------------------------
+                const map = new Bmap("#myMap");
+            
+                //------------------------------------------------------------------------
+                //2. geolocation: Display Map
+                //   map.geolocation(function(data:object){...});
+                //------------------------------------------------------------------------
+                map.geolocation(function(data) {
+                    //location
+                    // const lat = data.coords.latitude;
+
+                    const lat0 = data.coords.latitude;
+                    const lon0 = data.coords.longitude;
+
+                    let lat = lat0;
+                    let lon = lon0;
+
+                    $("#lat").val(lat);
+                    $("#lon").val(lon);
+
+                    //Map
+                    map.startMap(lat, lon, "load", 15);
+                    //pin
+                    map.pin(lat,lon,"#000000");
+                    map.infobox(lat, lon, "現在地", "Description");
+
+                const style = {
+                    pinColor:"#0000ff",
+                    fillColor:"rgba(0,0,100,0.1)",//0.1~1.0
+                    strokeWidth:2
+                };
+                map.circle(1000, style); //1000m = 1km, 2000 = 2Km
+            
+            
+            
+                    //B. Get ReverseGeocode of click location //クリックして住所を取得
+                    map.onGeocode("click", function(clickPoint){
+                    map.reverseGeocode(clickPoint.location, function(data){
+                        console.log(data);
+                        document.querySelector("#geocode1").innerHTML=data;
+                    });
+                });
+            
+
+            
+                    //B.Get geocode of click location //クリックしたら緯度経度を取得できる//本物
+                    map.onGeocode("click", function(data){
+                    console.log(data);                   //Get Geocode ObjectData
+                      lat = data.location.latitude;  //Get latitude
+                      lon = data.location.longitude; //Get longitude
+                    document.querySelector("#geocode").innerHTML=lat+','+lon;
+                    map.pin(lat,lon,"#ff0000");
+                    // let geocode1=$("#geocode1").val();
+            
+                    map.infobox(lat, lon, "指定地", );
+
+                    $("#lat").val(lat);
+                    $("#lon").val(lon);
+            
+                });
+                });
+            
+            }
+            
+
+
+
+            //*****************************************************
+            // Click Event
+            // ぐるなびAPIへデータRequest → APIサーバーからresponseデータ取得
+            //*****************************************************
+            $("#btn").on("click", function() {
+                //送信データをObject変数で用意
+                //参考URL:https://api.gnavi.co.jp/api/manual/restsearch/
+                const data = {
+                    keyid:$("#key").val(),
+                    latitude:$("#lat").val(),
+                    longitude:$("#lon").val(),
+                    range:3 //1km範囲内
+                };
+                //Ajax（非同期通信）
+                axios.get('https://api.gnavi.co.jp/RestSearchAPI/v3/', {
+                    params:data
+                })
+                    .then(function (response) {
+                    //データ受信成功！！showData関数にデータを渡す
+                    showData(response.data);
+                }).catch(function (error) {
+                    console.log(error);//通信Error
+                }).then(function () {
+                    //console.log("Last");//通信OK/Error後に処理を必ずさせたい場合
+                });
+            });
+
+            //*****************************************************
+            //ぐるなびデータ表示処理
+            //*****************************************************
+            function showData(data){
+                //データ確認用
+                console.log(data.rest);
+
+                //データを繰り返し処理で取得
+                const len  = data.rest.length; //データ数を取得
+                for( let i=0; i<len; i++){
+                    const lat1 = data.rest[i].latitude;
+                    const lon1 = data.rest[i].longitude;
+                    $("#table").append('<tr><td>' + data.rest[i].name + '</td><td>' + data.rest[i].opentime + '</td><td>' + lat1+ '</td><td>' + lon1+ '</td></tr>');
+                    
+                };
+            };
+
+            // map.pin(lat1,lon1,"#0000ff");
+
+        </script>
+    </body>
+</html>
